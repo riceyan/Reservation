@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnReserve;
     Button btnReset;
     TextView tvDisplay;
+    TextView tvDisplay2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         btnReserve = findViewById(R.id.btnReserve);
         btnReset = findViewById(R.id.btnReset);
         tvDisplay = findViewById(R.id.tvDisplay);
+        tvDisplay2 = findViewById(R.id.tvDisplay2);
 
         btnReserve.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,40 +63,54 @@ public class MainActivity extends AppCompatActivity {
                 if (cbNS.isChecked()) {
                     tvDisplay.setText("The table reserved is at a non-smoking area.");
                     if (d < 10) {
-                        tvDisplay.setText("Reservation timing is" + h + ":" + min + "Date is 0" + d + "/" + (m+1) + "/" + y);
+                        tvDisplay2.setText("Reservation timing is " + h + ":" + min + " on 0" + d + "/" + (m+1) + "/" + y);
                     }
                     else if (m < 10) {
-                        tvDisplay.setText("Reservation timing is" + h + ":" + min + "Date is " + d + "/0" + (m+1) + "/" + y);
+                        tvDisplay2.setText("Reservation timing is " + h + ":" + min + " on " + d + "/0" + (m+1) + "/" + y);
                     }
                     else if (d < 10 && m < 10) {
-                        tvDisplay.setText("Reservation timing is" + h + ":" + min + "Date is 0" + d + "/0" + (m+1) + "/" + y);
+                        tvDisplay2.setText("Reservation timing is " + h + ":" + min + " on 0" + d + "/0" + (m+1) + "/" + y);
                     }
                     else {
-                        tvDisplay.setText("Reservation timing is" + h + ":" + min + "Date is " + d + "/" + (m+1) + "/" + y);
+                        tvDisplay2.setText("Reservation timing is " + h + ":" + min + " on " + d + "/" + (m+1) + "/" + y);
                     }
                 }
                 else {
                     tvDisplay.setText("The table reserved is at a smoking area.");
                     if (d < 10) {
-                        tvDisplay.setText("Reservation timing is" + h + ":" + min + "Date is 0" + d + "/" + (m+1) + "/" + y);
+                        tvDisplay2.setText("Reservation timing is " + h + ":" + min + " on is 0" + d + "/" + (m+1) + "/" + y);
                     }
                     else if (m < 10) {
-                        tvDisplay.setText("Reservation timing is" + h + ":" + min + "Date is " + d + "/0" + (m+1) + "/" + y);
+                        tvDisplay2.setText("Reservation timing is " + h + ":" + min + " on " + d + "/0" + (m+1) + "/" + y);
                     }
                     else if (d < 10 && m < 10) {
-                        tvDisplay.setText("Reservation timing is" + h + ":" + min + "Date is 0" + d + "/0" + (m+1) + "/" + y);
+                        tvDisplay2.setText("Reservation timing is " + h + ":" + min + " on 0" + d + "/0" + (m+1) + "/" + y);
                     }
                     else {
-                        tvDisplay.setText("Reservation timing is" + h + ":" + min + "Date is " + d + "/" + (m+1) + "/" + y);
+                        tvDisplay2.setText("Reservation timing is " + h + ":" + min + " on " + d + "/" + (m+1) + "/" + y);
                     }
                 }
                 Toast.makeText(MainActivity.this,"Reservation Successful!",
                         Toast.LENGTH_LONG).show();
-
-//have yet to do default date & time
-//have yet to do clear inputs
             }
         });
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //put all variable names of inputs to clear when RESET is clicked
+                etName.getText().clear();
+                etNum.getText().clear();
+                etPax.getText().clear();
+
+                if (cbNS.isChecked()) {
+                    cbNS.setChecked(false);
+
+                }
+                tvDisplay.setText("");
+                tvDisplay2.setText("");
+            }
+        });
+
 
     }
 }
