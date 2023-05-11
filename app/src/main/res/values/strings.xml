@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Reservation</string>
+    <string name="tvName">Name</string>
+    <string name="etName">Enter your name</string>
+    <string name="tvMobileNum">Mobile Number</string>
+    <string name="etMobileNum">Enter Mobile Number</string>
+    <string name="tvPax">Size Of Group</string>
+    <string name="etPax">Enter Group Size</string>
+    <string name="checkbox">Non-Smoking Area</string>
+    <string name="btnReserve">Reserve</string>
+    <string name="btnReset">Reset</string>
+    <string name="preference">Table Area Preference:</string>
+    <string name="date">Date Of Reservation:</string>
+    <string name="time">Time Of Reservation</string>
+</resources>
